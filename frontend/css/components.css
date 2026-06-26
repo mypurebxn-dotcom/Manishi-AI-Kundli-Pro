@@ -1,0 +1,200 @@
+.badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.06);color:var(--muted);font-size:.78rem;white-space:nowrap}.badge.ok{color:#c8ffe8;border-color:rgba(54,211,153,.3)}.badge.warn{color:#ffe8ad;border-color:rgba(246,200,95,.35)}.badge.err{color:#ffd0d0;border-color:rgba(255,107,107,.35)}
+
+.btn{border-radius:14px;padding:10px 14px;background:linear-gradient(135deg,rgba(100,168,255,.18),rgba(246,200,95,.12));color:var(--text);border:1px solid var(--border);box-shadow:none}.btn.primary{background:linear-gradient(135deg,#2a6df5,#1250cf);border-color:rgba(255,255,255,.16)}.btn.gold{background:linear-gradient(135deg,#db9e25,#f6c85f);color:#201500;font-weight:800}.btn.ghost{background:rgba(255,255,255,.05)}
+
+.nav-list{display:flex;flex-direction:column;gap:7px}.nav-item{width:100%;display:flex;align-items:center;gap:10px;text-align:left;border-radius:15px;padding:10px 12px;background:transparent;color:var(--muted);border:1px solid transparent}.nav-item.active,.nav-item:hover{background:rgba(255,255,255,.07);color:var(--text);border-color:var(--border)}.nav-icon{width:26px;text-align:center}.search-box{width:100%;min-height:%;min-height:46px;border-radius:15px;border:1px solid var(--border);background:rgba(255,255,255,.06);color:var(--text);padding:0 14px;outline:none}.search-box:focus{border-color:rgba(100,168,255,.65)}
+
+.card{border:1px solid var(--border);border-radius:var(--radius);background:linear-gradient(145deg,rgba(21,31,51,.9),rgba(11,17,29,.92));padding:15px;box-shadow:0 10px 24px rgba(0,0,0,.18)}.card-title{font-weight:800;margin:0 0 6px}.card-muted{color:var(--muted);font-size:.92rem}.module-card{min-height:126px;display:flex;flex-direction:column;gap:8px;justify-content:space-between;text-align:left}.module-card .icon{font-size:1.55rem}.module-card.disabled{opacity:.55}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field label{display:block;color:var(--muted);font-size:.84rem;margin:0 0 6px}.input,.select,.textarea{width:100%;min-height:48px;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.06);color:var(--text);padding:10px 12px;outline:none}.textarea{min-height:120px;resize:vertical}.input:focus,.select:focus,.textarea:focus{border-color:rgba(100,168,255,.65)}
+
+.toast-stack{position:fixed;right:12px;bottom:86px;z-index:50;display:flex;flex-direction:column;gap:8px;max-width:min(420px,calc(100vw - 24px))}.toast{padding:12px 14px;border-radius:15px;border:1px solid var(--border);background:#101827;color:var(--text);box-shadow:var(--shadow)}.toast.ok{border-color:rgba(54,211,153,.35)}.toast.err{border-color:rgba(255,107,107,.35)}.loading-overlay{position:fixed;inset:0;z-index:60;display:none;place-items:center;background:rgba(5,8,14,.72)}.loading-overlay.show{display:grid}.spinner{width:46px;height:46px;border-radius:50%;border:4px solid rgba(255,255,255,.18);border-top-color:var(--gold);animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+
+.debug-log{max-height:280px;overflow:auto;background:rgba(0,0,0,.25);border-radius:14px;padding:10px;border:1px solid var(--border);font-size:.82rem}.error-box{border:1px solid rgba(255,107,107,.35);background:rgba(255,107,107,.08);border-radius:15px;padding:12px;color:#ffd9d9}.empty{padding:28px;text-align:center;border:1px dashed var(--border);border-radius:var(--radius);color:var(--muted)}
+
+/* Phase-27.1 Plugin Runtime */
+.hero-card{background:linear-gradient(135deg,rgba(246,200,95,.14),rgba(42,109,245,.12));}
+.status-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}.feature-card{display:flex;flex-direction:column;gap:12px;min-height:180px}.feature-head{display:flex;gap:10px;align-items:flex-start}.feature-host{min-height:140px}.mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}.mini-grid>div{border:1px solid var(--border);border-radius:14px;padding:10px;background:rgba(255,255,255,.05)}.clean-list{margin:10px 0 0;padding-left:20px;color:var(--muted)}.section-mini-title{font-size:1rem;margin:18px 2px 10px;color:var(--muted)}
+
+@media(max-width:520px){.mini-grid{grid-template-columns:1fr}.feature-card{min-height:auto}.status-row .badge{font-size:.72rem}}
+
+/* Phase 27.3: profile/history data UI */
+.list-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border:1px solid var(--border);border-radius:16px;background:rgba(15,23,42,.55);margin-bottom:10px}
+.row-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.btn.small{padding:8px 10px;font-size:13px}.btn.danger,.btn.small.danger{border-color:rgba(248,113,113,.55);color:#fecaca;background:rgba(127,29,29,.2)}
+.history-item{border:1px solid var(--border);border-radius:16px;background:rgba(15,23,42,.55);padding:10px 12px;margin-bottom:10px}.history-item summary{cursor:pointer;display:flex;justify-content:space-between;gap:12px;align-items:center}.history-item pre{white-space:pre-wrap;word-break:break-word;margin:10px 0 0}.field.wide{grid-column:1/-1}.profile-list{max-height:420px;overflow:auto;padding-right:2px}
+
+@media(max-width:520px){.list-row{align-items:flex-start;flex-direction:column}.row-actions{width:100%;justify-content:flex-start}.btn.small{min-height:40px}}
+
+/* ========== PHASE-21: CHART CLIPPING FIXES ========== */
+.chart-table-wrapper{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;margin:0 -15px;padding:0 15px;border-radius:0}
+.chart-table-wrapper table{min-width:600px;border-collapse:collapse}
+.chart-table-wrapper th,.chart-table-wrapper td{white-space:nowrap;padding:8px 12px}
+
+/* Sticky first column for planet name */
+.chart-table-wrapper th:first-child,
+.chart-table-wrapper td:first-child{position:sticky;left:0;background:linear-gradient(145deg,rgba(21,31,51,.98),rgba(11,17,29,.98));z-index:1;border-right:1px solid var(--border);box-shadow:2px 0 4px rgba(0,0,0,.2)}
+
+/* Premium chart card - prevent clipping */
+.premium-chart-card{overflow:visible}
+.premium-chart-card .chart-table-wrapper{margin-bottom:0}
+
+/* SVG chart responsive */
+.chart-svg{width:100%;height:auto;max-width:100%;display:block}
+.chart-svg-container{position:relative;width:100%;overflow:hidden;border-radius:12px;background:rgba(0,0,0,.15)}
+
+/* ========== PHASE-21: MOBILE TABLE CARD MODE ========== */
+@media(max-width:520px){
+  .chart-table-wrapper{display:none} /* hide table on very small screens */
+  .chart-card-mode{display:block}
+}
+
+.chart-card-mode{display:none}
+.chart-card-mode .planet-card{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.04);margin-bottom:8px}
+.chart-card-mode .planet-info{flex:1;min-width:0}
+.chart-card-mode .planet-name{font-weight:700;font-size:.9rem}
+.chart-card-mode .planet-details{display:flex;gap:8px;flex-wrap:wrap;font-size:.75rem;color:var(--muted);margin-top:4px}
+.chart-card-mode .planet-detail{border:1px solid var(--border);border-radius:6px;padding:2px 8px;background:rgba(255,255,255,.03)}
+
+/* ========== PHASE-21: PRINT STYLES ========== */
+@media print{
+  /* Hide navigation, headers, buttons */
+  .app-header,.sidebar,.bottom-nav,.mobile-menu-btn,.header-actions,.toast-stack,.loading-overlay,.safe-ribbon,
+  button[data-action],.btn,.search-box,.nav-list,.module-grid .module-card:not(.print-keep){display:none!important}
+  
+  /* Layout adjustments */
+  .app-shell{display:block!important}
+  .main{padding:0!important;margin:0!important}
+  .screen{max-width:none!important;margin:0!important;padding:0!important}
+  .card{border:1px solid #ccc!important;background:white!important;color:#000!important;box-shadow:none!important;break-inside:avoid;page-break-inside:avoid;margin-bottom:16px}
+  .screen-title{color:#000!important;font-size:1.5rem;margin-bottom:8px}
+  .screen-desc{color:#333!important}
+  .badge{border-color:#ccc!important;color:#000!important;background:#f0f0f0!important}
+  .badge.ok{color:#2e7d32!important;border-color:#2e7d32!important;background:#e8f5e9!important}
+  .badge.warn{color:#f57f17!important;border-color:#f57f17!important;background:#fff8e1!important}
+  .badge.err{color:#c62828!important;border-color:#c62828!important;background:#fdeaea!important}
+  
+  /* Tables print nicely */
+  .chart-table-wrapper{overflow:visible;margin:0;padding:0}
+  .chart-table-wrapper table{width:100%;min-width:auto;font-size:10pt}
+  .chart-table-wrapper th,.chart-table-wrapper td{white-space:normal;padding:6px 8px;border:1px solid #ddd}
+  .chart-table-wrapper th:first-child,.chart-table-wrapper td:first-child{position:static;box-shadow:none}
+  
+  /* Card mode hidden in print */
+  .chart-card-mode{display:none}
+  
+  /* Section headers stay with content */
+  h1,h2,h3,h4,.section-mini-title,.screen-title{break-after:avoid;page-break-after:avoid}
+  
+  /* Report sections */
+  .report-section{break-inside:avoid;page-break-inside:avoid;margin-bottom:20px}
+  .report-section-title{border-bottom:2px solid #333;padding-bottom:4px;margin-bottom:12px}
+  
+  /* Evidence report specific */
+  .evidence-report{font-size:11pt;line-height:1.5}
+  .evidence-score-table{width:100%;border-collapse:collapse;margin:12px 0}
+  .evidence-score-table th,.evidence-score-table td{border:1px solid #ddd;padding:8px;text-align:left}
+  .evidence-score-table th{background:#f5f5f5}
+  
+  /* A4 page size */
+  @page{margin:15mm;size:A4}
+}
+
+/* ========== PHASE-21: REPORT PREMIUM STYLES ========== */
+.report-pro-container{display:grid;gap:16px}
+.report-pro-section{border:1px solid var(--border);border-radius:14px;background:linear-gradient(145deg,rgba(21,31,51,.9),rgba(11,17,29,.92));padding:16px;break-inside:avoid}
+.report-pro-section-title{display:flex;align-items:center;gap:10px;margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border);font-size:1.1rem;font-weight:700;color:var(--gold)}
+.report-pro-section-title .icon{font-size:1.3rem}
+.report-pro-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.report-pro-field{display:flex;flex-direction:column;gap:4px}
+.report-pro-label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.report-pro-value{font-size:.95rem;font-weight:600;color:var(--text)}
+.report-pro-score{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid var(--border)}
+.report-pro-score-bar{width:100px;height:6px;border-radius:3px;background:rgba(255,255,255,.1);overflow:hidden}
+.report-pro-score-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--red),var(--gold),var(--green))}
+.report-pro-score-text{font-weight:700;font-size:.85rem;min-width:45px;text-align:right}
+
+@media print{
+  .report-pro-section{background:white!important;color:#000!important;border-color:#ddd!important}
+  .report-pro-section-title{color:#000!important;border-color:#ccc!important}
+  .report-pro-value{color:#000!important}
+  .report-pro-score{background:#f5f5f5!important;border-color:#ddd!important}
+  .report-pro-score-bar{background:#e0e0e0!important}
+}
+
+/* ========== PHASE-21: EVIDENCE REPORT ========== */
+.evidence-report .confidence-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-size:.8rem;font-weight:700}
+.evidence-report .confidence-high{background:rgba(54,211,153,.2);color:var(--green);border:1px solid rgba(54,211,153,.4)}
+.evidence-report .confidence-medium{background:rgba(246,200,95,.2);color:var(--gold);border:1px solid rgba(246,200,95,.4)}
+.evidence-report .confidence-low{background:rgba(255,107,107,.2);color:var(--red);border:1px solid rgba(255,107,107,.4)}
+.evidence-report .event-match{display:flex;align-items:flex-start;gap:12px;padding:12px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.03);margin-bottom:10px}
+.evidence-report .event-match-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.evidence-report .event-match-icon.green{background:rgba(54,211,153,.2);color:var(--green)}
+.evidence-report .event-match-icon.yellow{background:rgba(246,200,95,.2);color:var(--gold)}
+.evidence-report .event-match-icon.red{background:rgba(255,107,107,.2);color:var(--red)}
+.evidence-report .event-match-content{flex:1;min-width:0}
+.evidence-report .event-match-title{font-weight:700;margin-bottom:4px}
+.evidence-report .event-match-desc{font-size:.85rem;color:var(--muted);line-height:1.4}
+
+/* Phase 27.6 critical foundation patch */
+.mini-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:10px 12px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.035);margin:8px 0;break-inside:avoid}
+.mini-row b{color:var(--text)}
+.mini-row span{color:var(--muted);font-size:.88rem;text-align:right}
+.mini-row.active{border-color:var(--gold);background:rgba(246,200,95,.12)}
+.mini-row em{font-style:normal;color:var(--green);font-weight:700;font-size:.78rem}
+.kundli-result table{width:100%;border-collapse:collapse;font-size:.9rem}
+.kundli-result th,.kundli-result td{border-bottom:1px solid var(--border);padding:8px 7px;text-align:left;vertical-align:top}
+.kundli-result th{color:var(--gold);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+
+@media (max-width:480px){
+  .mini-row{display:block}
+  .mini-row span{display:block;text-align:left;margin-top:4px}
+}
+
+.place-suggestions {
+  margin-top: 6px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(15,23,42,.98);
+}
+
+.place-item {
+  padding: 10px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.place-item:hover {
+  background: rgba(255,255,255,.08);
+}
+
+.kundli-svg {
+  width: 100%;
+  max-width: 520px;
+  display: block;
+  margin: 12px auto;
+  color: var(--text, #e5e7eb);
+}
+
+.kundli-svg .house-num {
+  font-size: 13px;
+  opacity: .75;
+}
+
+.kundli-svg .sign-num {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.kundli-svg .planet-text {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.kundli-svg .lagna-mark {
+  font-size: 10px;
+  opacity: .8;
+}
+
+.kundli-svg .kundli-om {
+  font-size: 32px;
+  opacity: .55;
+}

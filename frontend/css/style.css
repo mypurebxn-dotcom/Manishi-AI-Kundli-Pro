@@ -1,0 +1,104 @@
+
+.chart-shell{
+  display:grid;
+  gap:10px;
+}
+
+.chart-legend{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:6px;
+  font-size:11px;
+}
+
+.chart-legend-row{
+  display:flex;
+  justify-content:space-between;
+  gap:6px;
+  padding:5px 7px;
+  border:1px solid rgba(148,163,184,.25);
+  border-radius:8px;
+  background:rgba(15,23,42,.55);
+}
+
+.chart-legend-row b{
+  color:#dbeafe;
+  font-weight:700;
+}
+
+.chart-legend-row span{
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.chart-legend-row em{
+  font-style:normal;
+  font-weight:900;
+}
+
+/* Phase 28 mobile chart containment fix */
+.kundli-svg{
+  width: 100% !important;
+  max-width: 360px !important;
+  height: auto !important;
+  box-sizing: border-box;
+  margin: 8px auto 0 !important;
+}
+
+.card:has(.kundli-svg){
+  overflow: hidden;
+}
+
+@media (min-width: 700px){
+  .kundli-svg{
+    max-width: 420px !important;
+  }
+}
+
+@media (min-width: 1100px){
+  .kundli-svg{
+    max-width: 460px !important;
+  }
+}
+
+/* Phase 28 mobile overflow hard fix */
+html,
+body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden !important;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+#app,
+.screen,
+.screen-body,
+.result-pro,
+.panel-grid,
+.module-grid,
+.card{
+  max-width:100% !important;
+  min-width:0 !important;
+}
+
+.panel-grid,
+.module-grid{
+  grid-template-columns:1fr !important;
+}
+
+.card{
+  overflow:hidden;
+}
+
+.kundli-svg{
+  width:100% !important;
+  max-width:100% !important;
+  height:auto !important;
+  display:block;
+  margin:8px auto 0 !important;
+}

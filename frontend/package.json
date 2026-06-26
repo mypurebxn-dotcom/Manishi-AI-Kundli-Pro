@@ -1,0 +1,11 @@
+{
+  "name": "manishi-lite-pro-frontend",
+  "version": "27.6.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 5173 --bind 0.0.0.0",
+    "build": "node -e \"console.log('No build needed: static No-React shell OK')\"",
+    "preview": "python3 -m http.server 5173 --bind 0.0.0.0"
+  }
+}

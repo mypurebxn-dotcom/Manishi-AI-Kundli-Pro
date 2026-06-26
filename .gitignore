@@ -1,0 +1,22 @@
+node_modules/
+logs/
+*.log
+*.tmp
+.DS_Store
+
+# generated checkpoints / archives
+checkpoints/*.tar.gz
+archive/
+*_backup*/
+manishi-ai-context.zip
+
+# disabled local files
+*.off
+
+# Python generated cache
+__pycache__/
+*.pyc
+
+# local AI/session scratch
+AI_CONTEXT/
+round*.txt

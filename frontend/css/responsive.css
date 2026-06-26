@@ -1,0 +1,115 @@
+@media (max-width: 900px){.app-shell{grid-template-columns:1fr}.sidebar{display:none}.main{grid-column:1;padding:14px 12px 92px}.bottom-nav{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.bottom-nav .nav-item{min-height:54px;justify-content:center;flex-direction:column;padding:6px 4px;font-size:.72rem}.bottom-nav .nav-icon{width:auto;font-size:1.1rem}.module-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.panel-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.screen-head{display:block}.header-actions .hide-mobile{display:none}.brand-title{max-width:190px}.toast-stack{left:12px;right:12px;bottom:82px}}
+
+@media (max-width: 390px){.module-grid{grid-template-columns:1fr}.brand-title{max-width:150px}.app-header{padding:10px 12px}.main{padding-left:10px;padding-right:10px}.card{padding:13px}.screen-title{font-size:1.25rem}}
+
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Phase-27.2 Mobile Navigation + Responsive Polish */
+.mobile-menu-btn{display:none}
+.mobile-drawer-backdrop{display:none}
+
+@media (max-width: 900px){
+  .app-shell{min-height:100svh;min-height:100svh}
+  .mobile-menu-btn{display:inline-flex;align-items:center;justify-content:center;min-width:46px}
+  .header-actions{gap:6px;flex-shrink:0}
+  .header-actions .badge{font-size:.72rem;padding:6px 8px;max-width:112px;overflow:hidden;text-overflow:ellipsis}
+  .brand-logo{width:44px;height:44px;flex:0 0 auto}
+  .brand-subtitle{font-size:.74rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:190px}
+  .screen{max-width:100%}
+  .module-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .module-card{min-height:132px;padding:14px;gap:7px}
+  .module-card .icon{font-size:1.35rem}
+  .module-card b{display:block;font-size:.96rem;line-height:1.22}
+  .module-card small{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .mobile-drawer-backdrop{position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.58);padding:0;align-items:flex-end;justify-content:center}
+  .mobile-drawer-backdrop.show{display:flex}
+  .mobile-drawer{width:100%;max-height:82dvh;overflow:auto;border-radius:24px 24px 0 0;border:1px solid var(--border);background:linear-gradient(145deg,rgba(12,18,31,.98),rgba(7,11,20,.99));box-shadow:0 -18px 42px rgba(0,0,0,.42);padding:14px 14px calc(18px + env(safe-area-inset-bottom))}
+  .drawer-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+  .drawer-head small{color:var(--muted)}
+  .mobile-nav-list{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .mobile-nav-list .nav-item{min-height:56px;background:rgba(255,255,255,.055);border-color:var(--border)}
+  body.drawer-open{overflow:hidden;touch-action:none}
+  body.drawer-open .mobile-drawer{touch-action:auto}
+}
+
+@media (max-width: 390px){
+  .module-grid{grid-template-columns:1fr}
+  .mobile-nav-list{grid-template-columns:1fr}
+  .brand-subtitle{max-width:145px}
+  .header-actions .badge{max-width:88px}
+}
+
+@media (min-width:901px){
+  .mobile-menu-btn{display:none!important}
+}
+
+/* ========== PHASE-21: MOBILE TABLE RESPONSIVE ========== */
+@media (max-width: 640px){
+  .chart-table-wrapper{margin:0 -12px;padding:0 12px}
+  .chart-table-wrapper table{min-width:560px;font-size:.8rem}
+  .chart-table-wrapper th,.chart-table-wrapper td{padding:6px 8px}
+}
+
+@media (max-width: 480px){
+  .chart-table-wrapper{display:none}
+  .chart-card-mode{display:block}
+}
+
+/* ========== PHASE-21: PRINT RESPONSIVE ========== */
+@media print{
+  .app-shell{display:block!important}
+  .main{padding:0!important}
+  .screen{padding:0!important;max-width:none!important}
+  .card{page-break-inside:avoid;break-inside:avoid}
+  .chart-table-wrapper{overflow:visible;margin:0;padding:0}
+  .chart-table-wrapper table{font-size:9pt;min-width:auto;width:100%}
+  .chart-card-mode{display:none}
+}
+
+/* Phase 28.9 active mobile layout containment fix */
+@media (max-width: 900px){
+  html,
+  body{
+    width:100% !important;
+    max-width:100% !important;
+    overflow-x:hidden !important;
+  }
+
+  .app-shell{
+    width:100% !important;
+    max-width:100% !important;
+    display:block !important;
+    overflow-x:hidden !important;
+  }
+
+  .app-header,
+  .main,
+  .screen,
+  .screen-body,
+  .result-pro,
+  .panel-grid,
+  .module-grid,
+  .card{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    overflow-x:hidden !important;
+  }
+
+  .main{
+    padding:12px 10px 92px !important;
+  }
+
+  .panel-grid,
+  .module-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .kundli-svg{
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    display:block !important;
+    margin:8px auto 0 !important;
+  }
+}
