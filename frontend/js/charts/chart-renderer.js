@@ -31,6 +31,17 @@
     }
   }
 
+  function listLayouts(){
+    ensureDefaults();
+
+    return Object.keys(LAYOUTS).sort().map(function(key){
+      return {
+        name: LAYOUTS[key].name,
+        label: LAYOUTS[key].label
+      };
+    });
+  }
+
   function render(type, layout){
     type = String(type || 'D1').toUpperCase();
     layout = String(layout || 'north').toLowerCase();
@@ -59,6 +70,7 @@
   APP.chartRenderer = {
     render: render,
     registerLayout: registerLayout,
+    listLayouts: listLayouts,
     layouts: LAYOUTS
   };
 

@@ -42,6 +42,10 @@ grep -q "layouts: LAYOUTS" frontend/js/charts/chart-renderer.js \
   || fail "chart-renderer must expose layouts registry"
 pass "layout registry exposed"
 
+grep -q "listLayouts: listLayouts" frontend/js/charts/chart-renderer.js \
+  || fail "chart-renderer must expose listLayouts"
+pass "layout list API exposed"
+
 # North layout must be registered through adapter, not by chart-module.
 grep -q "registerLayout('north', APP.chartSVG.renderNorth" frontend/js/charts/chart-renderer.js \
   || fail "north layout must be registered via APP.chartSVG.renderNorth"

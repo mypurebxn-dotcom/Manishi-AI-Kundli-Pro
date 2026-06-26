@@ -74,13 +74,20 @@ function runFile(file) {
 
 runFile('frontend/js/charts/chart-data.js');
 runFile('frontend/js/charts/chart-engine.js');
+runFile('frontend/js/charts/chart-svg-north.js');
+runFile('frontend/js/charts/chart-svg-south.js');
+runFile('frontend/js/charts/chart-svg-east.js');
+runFile('frontend/js/charts/chart-svg.js');
+runFile('frontend/js/charts/chart-renderer.js');
 runFile('frontend/js/charts/chart-module.js');
 
 const APP = sandbox.window.APP;
 
 assert(APP.chartData, 'APP.chartData missing');
 assert(APP.chartEngine, 'APP.chartEngine missing');
+assert(APP.chartRenderer, 'APP.chartRenderer missing');
 assert(APP.chartModule, 'APP.chartModule missing');
+assert(typeof APP.chartRenderer.listLayouts === 'function', 'chartRenderer.listLayouts missing');
 
 const requiredShape = ['type', 'title', 'lagna', 'planets', 'houses', 'meta'];
 
@@ -102,7 +109,12 @@ for (const type of registered) {
   assert(APP.chartData.builders[type], `chart-module registered ${type}, but chartData builder missing`);
 }
 
-console.log('✅ chartData/chartEngine/chartModule runtime contracts valid');
+const layouts = APP.chartRenderer.listLayouts().map(x => x.name).sort();
+for (const name of ['east', 'north', 'south']) {
+  assert(layouts.includes(name), `layout registry missing ${name}`);
+}
+
+console.log('✅ chartData/chartEngine/chartRenderer/chartModule runtime contracts valid');
 NODE
 
 echo "===== QA RESULT ====="

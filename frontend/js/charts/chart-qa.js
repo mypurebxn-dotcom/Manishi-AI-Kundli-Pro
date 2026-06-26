@@ -11,6 +11,13 @@
     ];
   }
 
+  function getLayoutList(){
+    if (APP.chartRenderer && typeof APP.chartRenderer.listLayouts === 'function') {
+      return APP.chartRenderer.listLayouts();
+    }
+    return [];
+  }
+
   function check(type){
     var data = APP.chartEngine && APP.chartEngine.build ? APP.chartEngine.build(type || 'D1') : null;
     var issues = [];
@@ -40,6 +47,7 @@
     var checks = getChartList().map(function(item){
       return check(item.type);
     });
+    var layouts = getLayoutList();
 
     var rows = checks.map(function(row){
       return '<p><b>' + APP.utils.escapeHTML(row.type) + ':</b> ' +
@@ -50,8 +58,9 @@
 
     return '<div class="card"><h3>🧪 चार्ट QA</h3>' +
       rows +
+      '<p><b>Layouts:</b> ' + APP.utils.escapeHTML(layouts.map(function(item){ return item.name; }).join(', ')) + '</p>' +
       '<details><summary>QA JSON</summary><pre class="debug-log">' +
-        APP.utils.escapeHTML(APP.utils.safeJSONStringify({ charts: checks })) +
+        APP.utils.escapeHTML(APP.utils.safeJSONStringify({ charts: checks, layouts: layouts })) +
       '</pre></details></div>';
   }
 
