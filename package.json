@@ -7,11 +7,12 @@
     "stop": "bash scripts/stop-app.sh",
     "doctor": "bash scripts/doctor-lite-pro.sh 5173",
     "qa:smoke": "bash tests/regression-smoke.sh 5173",
-    "qa": "npm run doctor && npm run qa:smoke && npm run qa:no404 && npm run qa:modules && npm run qa:charts && npm run qa:charts:v2 && npm run qa:charts:layout",
+    "qa": "npm run doctor && npm run qa:smoke && npm run qa:no404 && npm run qa:modules && npm run qa:charts && npm run qa:charts:v2 && npm run qa:charts:arch && npm run qa:charts:layout",
     "qa:no404": "bash tests/no-new-404.sh logs/frontend.log",
     "qa:modules": "bash tests/module-static-check.sh",
     "qa:charts": "bash tests/chart-contract-check.sh",
     "qa:charts:v2": "bash tests/chart-contract-v2-check.sh",
-    "qa:charts:layout": "node tests/chart-layout-debug.js"
+    "qa:charts:layout": "node tests/chart-layout-debug.js",
+    "qa:charts:arch": "bash tests/chart-architecture-guard.sh"
   }
 }
