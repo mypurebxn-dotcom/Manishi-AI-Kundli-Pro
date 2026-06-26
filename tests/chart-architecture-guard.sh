@@ -15,6 +15,8 @@ pass(){
 # Renderer/SVG files must not fetch API or build chart data directly.
 DRAW_ONLY_FILES=(
   "frontend/js/charts/chart-svg-north.js"
+  "frontend/js/charts/chart-svg-south.js"
+  "frontend/js/charts/chart-svg-east.js"
   "frontend/js/charts/chart-svg.js"
 )
 
@@ -44,6 +46,14 @@ pass "layout registry exposed"
 grep -q "registerLayout('north', APP.chartSVG.renderNorth" frontend/js/charts/chart-renderer.js \
   || fail "north layout must be registered via APP.chartSVG.renderNorth"
 pass "north layout registration contract"
+
+grep -q "registerLayout('south', APP.chartSVG.renderSouth" frontend/js/charts/chart-renderer.js \
+  || fail "south layout must be registered via APP.chartSVG.renderSouth"
+pass "south layout registration contract"
+
+grep -q "registerLayout('east', APP.chartSVG.renderEast" frontend/js/charts/chart-renderer.js \
+  || fail "east layout must be registered via APP.chartSVG.renderEast"
+pass "east layout registration contract"
 
 # chart-module must not call SVG renderers directly.
 if grep -nE "chartSVG|chartSVGNorth|renderNorth" frontend/js/charts/chart-module.js; then

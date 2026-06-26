@@ -16,8 +16,18 @@
   }
 
   function ensureDefaults(){
-    if (APP.chartSVG && typeof APP.chartSVG.renderNorth === 'function' && !LAYOUTS.north) {
+    if (!APP.chartSVG) return;
+
+    if (typeof APP.chartSVG.renderNorth === 'function' && !LAYOUTS.north) {
       registerLayout('north', APP.chartSVG.renderNorth, 'उत्तर भारतीय');
+    }
+
+    if (typeof APP.chartSVG.renderSouth === 'function' && !LAYOUTS.south) {
+      registerLayout('south', APP.chartSVG.renderSouth, 'दक्षिण भारतीय');
+    }
+
+    if (typeof APP.chartSVG.renderEast === 'function' && !LAYOUTS.east) {
+      registerLayout('east', APP.chartSVG.renderEast, 'पूर्व भारतीय');
     }
   }
 
