@@ -13,6 +13,7 @@
     "qa:charts": "bash tests/chart-contract-check.sh",
     "qa:charts:v2": "bash tests/chart-contract-v2-check.sh",
     "qa:charts:layout": "node tests/chart-layout-debug.js",
+    "qa:prediction:arch": "node tests/prediction-architecture-guard.js",
     "qa:charts:arch": "bash tests/chart-architecture-guard.sh"
   }
 }
