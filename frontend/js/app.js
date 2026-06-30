@@ -32,16 +32,18 @@
 })(window.APP, document);
 
 window.addEventListener("error", function(e){
+  if (document.getElementById("mkp-js-error-box")) return;
   document.body.insertAdjacentHTML("beforeend",
-    '<pre style="white-space:pre-wrap;background:#300;color:#fff;padding:12px;margin:12px;border-radius:8px;z-index:99999;position:relative">JS ERROR: '
+    '<pre id="mkp-js-error-box" style="white-space:pre-wrap;background:#300;color:#fff;padding:12px;margin:12px;border-radius:8px;z-index:99999;position:relative">JS ERROR: '
     + String(e.message) + "\n" + String(e.filename) + ":" + String(e.lineno) + ":" + String(e.colno)
     + '</pre>'
   );
 });
 
 window.addEventListener("unhandledrejection", function(e){
+  if (document.getElementById("mkp-promise-error-box")) return;
   document.body.insertAdjacentHTML("beforeend",
-    '<pre style="white-space:pre-wrap;background:#330;color:#fff;padding:12px;margin:12px;border-radius:8px;z-index:99999;position:relative">PROMISE ERROR: '
+    '<pre id="mkp-promise-error-box" style="white-space:pre-wrap;background:#330;color:#fff;padding:12px;margin:12px;border-radius:8px;z-index:99999;position:relative">PROMISE ERROR: '
     + String(e.reason && (e.reason.stack || e.reason.message || e.reason))
     + '</pre>'
   );
